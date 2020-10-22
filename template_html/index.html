@@ -1,0 +1,78 @@
+<head>
+  <title></title>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,700;1,400&display=swap">
+  <link rel="stylesheet" href="style.css">
+
+
+  <!-- leafleat  -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/leaflet-src.min.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/leaflet.min.css" />
+
+  <!-- leafleat :end  -->
+
+</head>
+
+<body>
+
+
+  <div class="sidenav">
+    <div class="center">
+      <img src="images/logo_wild.jpg" class="logo">
+
+    </div>
+
+    <div class="disblock ">
+      <div><img src="images/earthquakes.jpg" class="img-responsive"></div>
+      <div>
+        <div class=distitle>Earthquakes</div>
+        <p class="discontent">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Porro recusandae.</p>
+      </div>
+    </div>
+
+    <div class="disblock ">
+      <div><img src="images/earthquakes.jpg" class="img-responsive"></div>
+      <div>
+        <div class=distitle>Fire</div>
+        <p class="discontent">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Porro recusandae.</p>
+      </div>
+    </div>
+
+    <div class="disblock ">
+      <div><img src="images/earthquakes.jpg" class="img-responsive"></div>
+      <div>
+        <div class=distitle>Snow</div>
+        <p class="discontent">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Porro recusandae.</p>
+      </div>
+    </div>
+
+
+  </div>
+
+
+
+
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.5.1/dist/leaflet.css" />
+
+  <script src="https://unpkg.com/leaflet@1.5.1/dist/leaflet.js"></script>
+
+  <div id="map"></div>
+
+
+
+
+  <script>
+
+
+    let base = L.tileLayer('https://{s}.tile.openstreetmap.fr/hot/{z}/{x}/{y}.png', {
+      maxZoom: 19,
+      attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors &copy; <a href="https://carto.com/attributions">CARTO</a>',
+    });
+    var map = L.map('map', { layers: base, center: new L.LatLng(48.5, -4.5), zoom: 5 });
+
+  </script>
+
+
+
+</body>

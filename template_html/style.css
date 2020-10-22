@@ -1,3 +1,14 @@
+    html,
+    body {
+      height: 100%;
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      color: #333333;
+      /* a definir */
+      background-color: #f2f2f2;
+    }
+
+
 /***********************************************************
  -  Titres
 ***********************************************************/
@@ -49,7 +60,7 @@
 
     }
 
-    /***********************************************************
+/***********************************************************
  -  Media
 ***********************************************************/
     .img-responsive {
@@ -58,7 +69,7 @@
 
 
 
-    /***********************************************************
+/***********************************************************
  - btn
 ***********************************************************/
 
@@ -94,7 +105,7 @@
 
 
 
-    /***********************************************************
+/***********************************************************
  - Tags
 ***********************************************************/
 
@@ -116,41 +127,118 @@
     }
 
 
-    .tags-default {
-      color: #FFF;
-      background-color: #333333;
-    }
+.tags-default {
+  color: #FFF;
+  background-color: #333333;
+}
 
-    .tags-default:hover {
-      background-color: #828282;
-      color: #FFF;
-    }
+.tags-default:hover {
+  background-color: #828282;
+  color: #FFF;
+}
 
 
-    /***********************************************************
+/***********************************************************
  -  Align Blocks
 ***********************************************************/
 
-    .center {
-      display: flex;
-      justify-content: center;
+.center {
+  display: flex;
+  justify-content: center;
+}
+
+.left {
+  display: flex;
+  justify-content: left;
+}
+
+.right {
+  display: flex;
+  justify-content: flex-end;
+}
+
+/***********************************************************
+ - sidebar
+***********************************************************/
+.sidenav {
+  height: 100%;
+  width: 400px;
+  position: fixed;
+  z-index: 5000;
+  top: 0;
+  left: 0;
+  background-color: #0c0c0c;
+  overflow-x: hidden;
+  padding-top: 20px;
+}
+.disblock{
+  /* display: flex;
+  justify-content: center; */
+   margin: auto;
+  background-color: #fed32c;
+  max-width: 70%;
+  border-radius: 10px 10px 0px 10px;
+  padding:30px;
+  margin-bottom:15px;
+  display: flex;
+}
+
+
+.disblock>div:first-child {
+  flex: 1 30%;
+  display: inline-block;
+}
+
+
+.disblock>div:last-child {
+  flex: 1 70%;
+  display: inline-block;
+}
+
+
+.distitle {
+  background-color: #fed32c;
+  font-weight: bold;
+}
+
+.discontent {
+  font-size: 12px;
+  line-height: 12px;
+}
+
+
+  .img-responsive{
+    max-width: 100%
+  }
+
+  .logo {
+    max-width: 80%;
+    margin-bottom: 30px;;
+  }
+
+
+
+
+
+    #map {
+      width: 100% !important;
+      height: 100% !important;
+      z-index: 4000;
     }
 
-    .left {
-      display: flex;
-      justify-content: left;
-    }
+.leaflet-popup-content-wrapper {
+  padding: 1px;
+  text-align: left;
+  border-radius: 0px;
+  min-height: 150px;
+  min-width: 350px;
+}
 
-    .right {
-      display: flex;
-      justify-content: flex-end;
-    }
+.leaflet-popup-content p {
+  margin: 0 0;
+}
 
-
-
-    .img-responsive {
-      max-width: 100%
-    }
-
- 
-
+.leaflet-popup-content a.btn {
+  color: #FFF;
+  font-family: 'Poppins', sans-serif;
+}

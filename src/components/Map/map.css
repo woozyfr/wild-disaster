@@ -1,0 +1,25 @@
+#map,
+#root,
+#container {
+	width: 100% !important;
+	height: 100% !important;
+	z-index: 4000;
+	background-color: black;
+}
+
+.leaflet-popup-content-wrapper {
+	padding: 1px;
+	text-align: left;
+	border-radius: 0px;
+	min-height: 150px;
+	min-width: 350px;
+}
+
+.leaflet-popup-content p {
+	margin: 0 0;
+}
+
+.leaflet-popup-content a.btn {
+	color: #FFF;
+	font-family: 'Poppins', sans-serif;
+}
