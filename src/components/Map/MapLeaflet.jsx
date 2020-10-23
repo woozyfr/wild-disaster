@@ -3,10 +3,11 @@ import L from "leaflet";
 import "./map.css";
 import "./images/dot-yellowt.png";
 import axios from "axios";
+
 class MapLeaflet extends React.Component {
   componentDidMount() {
     const base = L.tileLayer(
-      "https://tiles.stadiamaps.com/tiles/alidade_smooth_dark/{z}/{x}/{y}{r}.png",
+      "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",
       {
         maxZoom: 19,
         attribution:
