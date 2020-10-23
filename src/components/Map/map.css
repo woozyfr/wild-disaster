@@ -13,13 +13,22 @@
 	border-radius: 0px;
 	min-height: 150px;
 	min-width: 350px;
+	background-color: #ffd42d;
+
+}
+
+.leaflet-popup-tip {
+	background: #ffd42d;
 }
 
 .leaflet-popup-content p {
 	margin: 0 0;
+	font-size: 14px;
+	line-height: 16px;
 }
 
 .leaflet-popup-content a.btn {
 	color: #FFF;
 	font-family: 'Poppins', sans-serif;
 }
+
