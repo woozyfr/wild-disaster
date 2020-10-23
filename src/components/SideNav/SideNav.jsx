@@ -46,7 +46,12 @@ class SideNav extends React.Component {
             <span>>&nbsp;</span>Parameteres
           </div>
           <div class="menu-button">
-            <div onClick={this.panelOpen}>Ouverture test panel</div>
+            <div
+              onClick={this.panelOpen}
+              className={this.state.panel_active ? "activeMenu" : ""}
+            >
+              Ouverture test panel
+            </div>
             {menu_list.map((item) => (
               <SideNavItem
                 name={item.name}
