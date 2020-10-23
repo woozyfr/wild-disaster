@@ -6,6 +6,7 @@ import axios from "axios";
 
 class MapLeaflet extends React.Component {
   componentDidMount() {
+    //https://leaflet-extras.github.io/leaflet-providers/preview/
     const base = L.tileLayer(
       "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",
       {
@@ -17,7 +18,7 @@ class MapLeaflet extends React.Component {
     const map = L.map("map", {
       layers: base,
       center: new L.LatLng(48.5, -4.5),
-      zoom: 5,
+      zoom: 3,
     });
 
     let yellowDot = L.icon({
@@ -40,7 +41,7 @@ class MapLeaflet extends React.Component {
           const lat = event.geometry[0].coordinates[0];
           const lg = event.geometry[0].coordinates[1];
           if (!isNaN(lat) && !isNaN(lg)) {
-            L.marker([lat, lg], { icon: yellowDot })
+            L.marker([lg, lat], { icon: yellowDot })
               .addTo(map)
               .bindPopup(
                 "<h5>" +

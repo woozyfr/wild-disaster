@@ -20,7 +20,7 @@ const menu_list = [
 
 class SideNav extends React.Component {
   //https://codepen.io/davidmellul/pen/RYEdLQ
-
+  //https://www.pluralsight.com/guides/react-communicating-between-components
   constructor(props) {
     super(props);
     this.state = { panel_active: false };
