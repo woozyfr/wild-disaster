@@ -1,5 +1,6 @@
 import React from "react";
 import "./SideNav.css";
+import "./Contact.css";
 import SubSideNav from "./SubSideNav";
 import SideNavItem from "./SideNavItem";
 
@@ -24,14 +25,23 @@ class SideNav extends React.Component {
   constructor(props) {
     super(props);
     this.state = { panel_active: false };
-    this.panelOpen = this.panelOpen.bind(this);
+    this.handleClick = this.handleClick.bind(this);
+    this.closePanelClick = this.closePanelClick.bind(this);
   }
 
-  panelOpen(event) {
+  handleClick(event) {
     event.preventDefault();
     console.log("Ouverture Panel");
     this.setState((state) => ({
       panel_active: !this.state.panel_active,
+    }));
+  }
+
+  closePanelClick(event) {
+    event.preventDefault();
+    console.log("Ouverture Panel");
+    this.setState((state) => ({
+      panel_active: false,
     }));
   }
 
@@ -43,11 +53,11 @@ class SideNav extends React.Component {
             <img src="images/logo_wild.jpg" className="logo" alt="logo" />
           </div>
           <div class="titleParameters">
-            <span>>&nbsp;</span>Parameteres
+            <span>>&nbsp;</span>Parametres
           </div>
           <div class="menu-button">
             <div
-              onClick={this.panelOpen}
+              onClick={this.handleClick}
               className={this.state.panel_active ? "activeMenu" : ""}
             >
               Ouverture test panel
@@ -60,8 +70,41 @@ class SideNav extends React.Component {
               />
             ))}
           </div>
+          <div className="bottom-about">
+            <div className="bottom-about-content"></div>
+          </div>
         </div>
-        <SubSideNav collapsed={this.state.panel_active} />
+        <SubSideNav collapsed={this.state.panel_active}>
+          <div className="right close-button" onClick={this.closePanelClick}>
+            fermer
+          </div>
+
+          <div class="sidenav-second-title">
+            <span>>&nbsp;</span>Contact
+          </div>
+          <form>
+            <input
+              type="text"
+              id="fname"
+              name="Name"
+              placeholder="Your name.."
+            />
+
+            <input
+              type="email"
+              id="lname"
+              name="lastname"
+              placeholder="Your last name.."
+            />
+
+            <textarea
+              id="subject"
+              name="subject"
+              placeholder="Write something.."
+            ></textarea>
+            <input type="submit" value="Submit" />
+          </form>
+        </SubSideNav>
       </div>
     );
   }

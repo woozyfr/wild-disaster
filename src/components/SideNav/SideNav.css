@@ -96,3 +96,25 @@
 .titleParameters > span{
   color: #fed32c;
 }
+
+.close-button {
+  font-size: 20px;
+}
+
+.close-button:hover {
+  color:#333333;
+  cursor: pointer;
+}
+
+/* 
+.bottom-about {
+  position: relative;
+} */
+
+.bottom-about-content {
+  background-image: url(images/bottomabout.jpg);
+  bottom: 0px;
+  width:258px;
+  height:185px;
+  position: absolute;
+}

@@ -2,9 +2,16 @@ import React from "react";
 import L from "leaflet";
 import "./map.css";
 import "./images/dot-yellowt.png";
+import "./images/logo_loader.jpg";
 import axios from "axios";
 
 class MapLeaflet extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = { loading: true };
+    this.panelOpen = this.componentDidMount.bind(this);
+  }
+
   componentDidMount() {
     //https://leaflet-extras.github.io/leaflet-providers/preview/
     const base = L.tileLayer(
@@ -50,6 +57,8 @@ class MapLeaflet extends React.Component {
               );
           }
         });
+
+        console.log("Delete loader...");
       })
       .catch(function (error) {
         console.error(error);
@@ -61,7 +70,14 @@ class MapLeaflet extends React.Component {
   }
 
   render() {
-    return <div id={this.props.map_id}>Map</div>;
+    return (
+      <div id="mapContainer">
+        {/* <div id="mapLoader">
+          <img src="images/logo_loader.jpg" className="logo" alt="logo" />
+        </div> */}
+        <div id={this.props.map_id}>Map</div>
+      </div>
+    );
   }
 }
 export default MapLeaflet;

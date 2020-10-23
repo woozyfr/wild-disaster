@@ -1,11 +1,33 @@
 #map,
 #root,
-#container {
+#container,
+#mapContainer {
 	width: 100% !important;
 	height: 100% !important;
 	z-index: 4000;
 	background-color: black;
 }
+
+
+
+#mapLoader {
+	width: 100% !important;
+	height: 100% !important;
+	z-index: 4200;
+	position: relative;
+	/* display:none; */
+	background-color: #000000;
+}
+
+
+#mapLoader > img{
+	margin: 0;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}
+
 
 .leaflet-popup-content-wrapper {
 	padding: 1px;
