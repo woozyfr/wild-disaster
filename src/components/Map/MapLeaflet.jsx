@@ -58,7 +58,7 @@ class MapLeaflet extends React.Component {
           }
         });
 
-        console.log("Delete loader...");
+        //console.log("Delete loader...");
       })
       .catch(function (error) {
         console.error(error);

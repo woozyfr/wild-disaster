@@ -7,43 +7,46 @@ import SideNavItem from "./SideNavItem";
 const menu_list = [
   {
     name: "Choix par date",
-    active: false,
+    route: "/by-date",
   },
   {
     name: "Derrnier evement",
-    active: false,
+    route: "/last-event",
   },
   {
     name: "Type d'evement",
-    active: false,
+    route: "/by-categories",
+  },
+  {
+    name: "Contact",
+    route: "/contact",
   },
 ];
 
 class SideNav extends React.Component {
-  //https://codepen.io/davidmellul/pen/RYEdLQ
-  //https://www.pluralsight.com/guides/react-communicating-between-components
   constructor(props) {
     super(props);
-    this.state = { panel_active: false };
-    this.handleClick = this.handleClick.bind(this);
-    this.closePanelClick = this.closePanelClick.bind(this);
+    this.state = { panel_status: true };
+    this.collapsed = this.collapsed.bind(this);
   }
 
-  handleClick(event) {
-    event.preventDefault();
-    console.log("Ouverture Panel");
+  // handler() {
+  //   this.setState({
+  //     panel_status: !this.state.panel_status,
+  //   });
+  // }
+
+  collapsed(event) {
     this.setState((state) => ({
-      panel_active: !this.state.panel_active,
+      panel_status: !this.state.panel_status,
     }));
   }
 
-  closePanelClick(event) {
-    event.preventDefault();
-    console.log("Ouverture Panel");
-    this.setState((state) => ({
-      panel_active: false,
-    }));
-  }
+  // closeYellowPanel(event) {
+  //   this.setState((state) => ({
+  //     panel_active: false,
+  //   }));
+  // }
 
   render() {
     return (
@@ -56,16 +59,10 @@ class SideNav extends React.Component {
             <span>>&nbsp;</span>Parametres
           </div>
           <div class="menu-button">
-            <div
-              onClick={this.handleClick}
-              className={this.state.panel_active ? "activeMenu" : ""}
-            >
-              Ouverture test panel
-            </div>
             {menu_list.map((item) => (
               <SideNavItem
                 name={item.name}
-                active={item.active}
+                route={item.route}
                 key={item.name}
               />
             ))}
@@ -74,37 +71,7 @@ class SideNav extends React.Component {
             <div className="bottom-about-content"></div>
           </div>
         </div>
-        <SubSideNav collapsed={this.state.panel_active}>
-          <div className="right close-button" onClick={this.closePanelClick}>
-            fermer
-          </div>
-
-          <div class="sidenav-second-title">
-            <span>>&nbsp;</span>Contact
-          </div>
-          <form>
-            <input
-              type="text"
-              id="fname"
-              name="Name"
-              placeholder="Your name.."
-            />
-
-            <input
-              type="email"
-              id="lname"
-              name="lastname"
-              placeholder="Your last name.."
-            />
-
-            <textarea
-              id="subject"
-              name="subject"
-              placeholder="Write something.."
-            ></textarea>
-            <input type="submit" value="Submit" />
-          </form>
-        </SubSideNav>
+        <SubSideNav collapsed={this.openYellowPanel}></SubSideNav>
       </div>
     );
   }

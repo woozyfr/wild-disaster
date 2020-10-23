@@ -1,8 +1,30 @@
 import React from "react";
 
-class Contact extends React.Component {
+export default class Contact extends React.Component {
   render() {
-    return <div>Contact</div>;
+    return (
+      <div>
+        <div class="sidenav-second-title">
+          <span>>&nbsp;</span>Contact
+        </div>
+        <form>
+          <input type="text" id="fname" name="Name" placeholder="Your name.." />
+
+          <input
+            type="email"
+            id="lname"
+            name="lastname"
+            placeholder="Your last name.."
+          />
+
+          <textarea
+            id="subject"
+            name="subject"
+            placeholder="Write something.."
+          ></textarea>
+          <input type="submit" value="Submit" />
+        </form>
+      </div>
+    );
   }
 }
-export default Contact;

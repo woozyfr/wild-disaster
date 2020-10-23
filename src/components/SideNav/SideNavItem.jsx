@@ -1,41 +1,29 @@
 import React from "react";
 import "./images/chevron-right-white.png";
 import "./images/chevron-right-black.png";
+import { NavLink } from "react-router-dom";
+
 class SideNavItem extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = { active: false };
-    this.handleClick = this.handleClick.bind(this);
-  }
-  //https://codepen.io/davidmellul/pen/RYEdLQ
-  handleClick(event) {
-    event.preventDefault();
-    console.log("Le lien a été cliqué.");
+  handlePanelClick(event) {
     this.setState((state) => ({
-      active: !this.state.active,
+      panel_status: !this.state.panel_status,
     }));
   }
-
+  /*
+this.props.collapsed
+*/
   render() {
     return (
-      <div
-        to="/"
-        onClick={this.handleClick}
-        activeClassName={"activeMenu"}
-        className={this.state.active ? "activeMenu" : ""}
+      <NavLink
+        to={this.props.route}
+        activeClassName="selected"
+        onClick={this.props.handlePanelClick}
       >
         <div>{this.props.name}</div>
         <div>
-          <img
-            src={
-              this.state.active
-                ? "images/chevron-right-black.png"
-                : "images/chevron-right-white.png"
-            }
-            alt=""
-          />
+          <img src="images/chevron-right-white.png" alt="" />
         </div>
-      </div>
+      </NavLink>
     );
   }
 }

@@ -58,33 +58,59 @@
 .sidenav-second-title>span {
   color: #FFF;
 }
-
-
-.menu-button>div {
+.menu-button>a {
   background-color: #2b2b2b;
   color: #FFF;
   padding: 20px;
   margin: 4px 0px;
   display: flex;
+  text-decoration: none;
 }
+    
 
-.menu-button>div:hover {
+
+.menu-button>a:hover {
   background-color: #ffd32d;
   color:#000;
 }
 
-.menu-button>div.activeMenu {
+.menu-button>a.selected {
   background-color: #ffd32d;
   color: #000;
 }
 
-.menu-button>div>div:last-child {
+.menu-button>a.selected>div:first-child {
+  color: #000;
+}
+
+.menu-button>a>div:first-child {
+  color:white;
+}
+
+.menu-button>a>div:last-child {
   margin-left: auto;
 }
 
-.menu-button>div>div:last-child > img{
+.menu-button>a>div:last-child > img{
   width:11px;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 .titleParameters {
   color: #FFF;
