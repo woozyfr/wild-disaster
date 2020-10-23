@@ -40,7 +40,13 @@ class MapLeaflet extends React.Component {
           const lat = event.geometry[0].coordinates[0];
           const lg = event.geometry[0].coordinates[1];
           if (!isNaN(lat) && !isNaN(lg)) {
-            L.marker([lat, lg], { icon: yellowDot }).addTo(map);
+            L.marker([lat, lg], { icon: yellowDot })
+              .addTo(map)
+              .bindPopup(
+                "<h5>" +
+                  event.title +
+                  "</h5>.<p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Exercitationem totam magnam, cumque doloribus impedit soluta quam distinctio veritatis fugit nihil accusamus perspiciatis officia, in obcaecati laboriosam laudantium magni velit consequuntur.</p>"
+              );
           }
         });
       })

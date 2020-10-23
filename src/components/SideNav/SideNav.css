@@ -28,17 +28,21 @@
 .sidenav-second {
   height: 100%;
   width: 420px;
-  position: fixed;
+  position: absolute;
   z-index: 4999;
   top: 0;
   left: 320px;
   background-color: #ffd42d;
   overflow-x: hidden;
+  transition: left .35s;
   -webkit-box-shadow: 10px 0px 10px -4px rgba(0, 0, 0, 0.47);
   -moz-box-shadow: 10px 0px 10px -4px rgba(0, 0, 0, 0.47);
   box-shadow: 10px 0px 10px -4px rgba(0, 0, 0, 0.47);
 }
 
+.sidenav-second.collapsed {
+  left: -120px;
+}
 
 .sidenav-second-container {
   margin: 70px 30px;
@@ -69,6 +73,10 @@
   color:#000;
 }
 
+.menu-button>div.activeMenu {
+  background-color: #ffd32d;
+  color: #000;
+}
 
 .menu-button>div>div:last-child {
   margin-left: auto;
@@ -88,39 +96,3 @@
 .titleParameters > span{
   color: #fed32c;
 }
-
-
-/* 
-.disblock {
-
-  margin: auto;
-  background-color: #fed32c;
-  max-width: 70%;
-  border-radius: 10px 10px 0px 10px;
-  padding: 30px;
-  margin-bottom: 15px;
-  display: flex;
-}
-
-
-.disblock>div:first-child {
-  flex: 1 30%;
-  display: inline-block;
-}
-
-
-.disblock>div:last-child {
-  flex: 1 70%;
-  display: inline-block;
-}
-
-
-.distitle {
-  background-color: #fed32c;
-  font-weight: bold;
-}
-
-.discontent {
-  font-size: 12px;
-  line-height: 12px;
-} */
