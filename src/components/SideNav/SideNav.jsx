@@ -26,27 +26,29 @@ const menu_list = [
 class SideNav extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { panel_status: true };
-    this.collapsed = this.collapsed.bind(this);
+    this.state = { collapsed: true };
+    this.collapsedYellowPanel = this.collapsedYellowPanel.bind(this);
+    this.closeYellowPanel = this.closeYellowPanel.bind(this);
   }
 
-  // handler() {
-  //   this.setState({
-  //     panel_status: !this.state.panel_status,
-  //   });
-  // }
-
-  collapsed(event) {
+  collapsedYellowPanel(event) {
     this.setState((state) => ({
-      panel_status: !this.state.panel_status,
+      collapsed: false,
+    }));
+
+    setTimeout(() => {
+      this.setState((state) => ({
+        collapsed: true,
+      }));
+    }, 390);
+  }
+
+  closeYellowPanel(event) {
+    alert("closeYellowPanel");
+    this.setState((state) => ({
+      collapsed: false,
     }));
   }
-
-  // closeYellowPanel(event) {
-  //   this.setState((state) => ({
-  //     panel_active: false,
-  //   }));
-  // }
 
   render() {
     return (
@@ -55,19 +57,28 @@ class SideNav extends React.Component {
           <div className="center">
             <img src="images/logo_wild.jpg" className="logo" alt="logo" />
           </div>
-          <div class="titleParameters">
+          <div className="titleParameters">
             <span>>&nbsp;</span>Parametres
           </div>
-          <div class="menu-button">
+          <div className="menu-button">
             {menu_list.map((item) => (
-              <MenuItem name={item.name} route={item.route} key={item.name} />
+              <MenuItem
+                name={item.name}
+                route={item.route}
+                key={item.name}
+                collapsedYellowPanel={this.collapsedYellowPanel}
+              />
             ))}
           </div>
-          <div className="bottom-about">
+          {/* <div className="bottom-about">
             <div className="bottom-about-content"></div>
-          </div>
+          </div> */}
         </div>
-        <YellowPanel collapsed={this.openYellowPanel}></YellowPanel>
+        <YellowPanel
+          collapsed={this.state.collapsed}
+          closeYellowPanel={this.closeYellowPanel}
+          collapsedYellowPanel={this.collapsedYellowPanel}
+        ></YellowPanel>
       </div>
     );
   }

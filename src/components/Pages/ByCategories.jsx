@@ -4,7 +4,7 @@ export default class ByCategories extends React.Component {
   render() {
     return (
       <div>
-        <div class="sidenav-second-title">
+        <div className="yellow-panel-title">
           <span>>&nbsp;</span>Search By Categories
         </div>
         <p>

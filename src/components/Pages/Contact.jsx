@@ -4,7 +4,7 @@ export default class Contact extends React.Component {
   render() {
     return (
       <div>
-        <div class="sidenav-second-title">
+        <div className="yellow-panel-title">
           <span>>&nbsp;</span>Contact
         </div>
         <form>

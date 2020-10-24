@@ -25,7 +25,7 @@
 }
 
 
-.sidenav-second {
+#yellow-panel {
   height: 100%;
   width: 420px;
   position: absolute;
@@ -40,24 +40,25 @@
   box-shadow: 10px 0px 10px -4px rgba(0, 0, 0, 0.47);
 }
 
-.sidenav-second.collapsed {
+#yellow-panel.collapsed {
   left: -120px;
 }
 
-.sidenav-second-container {
+.yellow-panel-container {
   margin: 70px 30px;
 }
 
-.sidenav-second-title {
+.yellow-panel-title {
   color: #000;
   padding: 20px;
   font-size: 26px;
   font-weight: bold;
 }
 
-.sidenav-second-title>span {
+.yellow-panel-title>span {
   color: #FFF;
 }
+
 .menu-button>a {
   background-color: #2b2b2b;
   color: #FFF;

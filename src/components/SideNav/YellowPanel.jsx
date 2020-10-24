@@ -11,16 +11,17 @@ export default class YellowPanel extends React.Component {
     return (
       <div>
         <div
-          className={
-            this.props.collapsed ? "sidenav-second" : "sidenav-second collapsed"
-          }
+          id="yellow-panel"
+          className={!this.props.collapsed ? "collapsed" : ""} //
         >
-          <div className="right close-button" onClick={this.closePanelClick}>
+          <div
+            className="right close-button"
+            onClick={this.props.closeYellowPanel}
+          >
             fermer
           </div>
-          =
-          {this.props.collapsed ? "sidenav-second" : "sidenav-second collapsed"}
-          <div className="sidenav-second-container">
+
+          <div className="yellow-panel-container">
             <Switch>
               <Route path="/contact" component={Contact} />
               <Route path="/by-date" component={ByDate} />
