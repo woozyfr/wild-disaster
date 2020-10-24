@@ -6,7 +6,7 @@ import LastEvent from "../Pages/LastEvent";
 import ByCategories from "../Pages/ByCategories";
 import Contact from "../Pages/Contact";
 
-export default class SubSideNav extends React.Component {
+export default class YellowPanel extends React.Component {
   render() {
     return (
       <div>

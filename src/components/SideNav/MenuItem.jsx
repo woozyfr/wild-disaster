@@ -3,7 +3,7 @@ import "./images/chevron-right-white.png";
 import "./images/chevron-right-black.png";
 import { NavLink } from "react-router-dom";
 
-class SideNavItem extends React.Component {
+export default class MenuItem extends React.Component {
   handlePanelClick(event) {
     this.setState((state) => ({
       panel_status: !this.state.panel_status,
@@ -27,4 +27,3 @@ this.props.collapsed
     );
   }
 }
-export default SideNavItem;

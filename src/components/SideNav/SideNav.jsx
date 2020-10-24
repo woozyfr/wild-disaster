@@ -1,8 +1,8 @@
 import React from "react";
 import "./SideNav.css";
 import "./Contact.css";
-import SubSideNav from "./SubSideNav";
-import SideNavItem from "./SideNavItem";
+import YellowPanel from "./YellowPanel";
+import MenuItem from "./MenuItem";
 
 const menu_list = [
   {
@@ -60,18 +60,14 @@ class SideNav extends React.Component {
           </div>
           <div class="menu-button">
             {menu_list.map((item) => (
-              <SideNavItem
-                name={item.name}
-                route={item.route}
-                key={item.name}
-              />
+              <MenuItem name={item.name} route={item.route} key={item.name} />
             ))}
           </div>
           <div className="bottom-about">
             <div className="bottom-about-content"></div>
           </div>
         </div>
-        <SubSideNav collapsed={this.openYellowPanel}></SubSideNav>
+        <YellowPanel collapsed={this.openYellowPanel}></YellowPanel>
       </div>
     );
   }
