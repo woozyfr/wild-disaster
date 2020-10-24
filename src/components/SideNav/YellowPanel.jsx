@@ -12,7 +12,7 @@ export default class YellowPanel extends React.Component {
       <div>
         <div
           id="yellow-panel"
-          className={!this.props.collapsed ? "collapsed" : ""} //
+          className={!this.props.collapsed ? "" : "collapsed"} //
         >
           <div
             className="right close-button"

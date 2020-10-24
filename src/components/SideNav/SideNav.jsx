@@ -33,20 +33,19 @@ class SideNav extends React.Component {
 
   collapsedYellowPanel(event) {
     this.setState((state) => ({
-      collapsed: false,
+      collapsed: true,
     }));
 
     setTimeout(() => {
       this.setState((state) => ({
-        collapsed: true,
+        collapsed: false,
       }));
     }, 390);
   }
 
   closeYellowPanel(event) {
-    alert("closeYellowPanel");
     this.setState((state) => ({
-      collapsed: false,
+      collapsed: true,
     }));
   }
 
